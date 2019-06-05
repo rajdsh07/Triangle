@@ -135,3 +135,38 @@ namespace SENG8040_Assignment2
         }
     }
 }
+
+
+NUnit -->
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SENG8040_Assignment2;
+using NUnit.Framework;
+
+namespace ClassLibrary1
+{
+    [TestFixture]
+    public class TriDimond
+    {
+        [Test]
+        public void Analyze_Input7and7and7_ReturnsEquilateral()
+        {
+            //Arrange
+            int opt1 = 7;
+            int opt2 = 7;
+            int opt3 = 7;
+            string expectedOutcome = "This is an equilateral triangle.\n";
+            TriangleSolver ts = new TriangleSolver(opt1, opt2, opt3);
+
+            //Act
+            int actualOutcome = ts.Analyze(opt1, opt2, opt3);
+
+            //Assert
+            Assert.AreEqual(expectedOutcome, actualOutcome);
+        }
+    }
+}
